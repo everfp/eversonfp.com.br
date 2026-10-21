@@ -1,134 +1,468 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Everson Pereira | Infraestrutura, DevOps e Tecnologia</title>
-    <meta name="description"
-        content="Site pessoal de Everson Pereira com projetos, redes sociais e conteúdos sobre infraestrutura, DevOps, automação e tecnologia.">
-    <meta name="author" content="Everson Pereira">
-
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Everson Pereira | Analista de TI e Infraestrutura</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
 </head>
+<body class="font-sans antialiased selection:bg-brand-500 selection:text-white">
 
-<body>
-    <div class="container">
+    <!-- NAVBAR FLUTUANTE -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full glass px-6 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
+        <a href="#home" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+            <i class="fa-solid fa-terminal text-brand-500 text-lg"></i>
+            Everson<span class="text-brand-500 font-mono animate-pulse">_</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <a href="#home" class="hover:text-brand-400 transition-colors">Home</a>
+            <a href="#expertise" class="hover:text-brand-400 transition-colors">Infraestrutura</a>
+            <a href="#stack" class="hover:text-brand-400 transition-colors">Stack DevOps</a>
+            <a href="#sobre" class="hover:text-brand-400 transition-colors">Trajetória</a>
+            <a href="#contato" class="hover:text-brand-400 transition-colors">Contato</a>
+        </div>
+        <a href="#contato" class="hidden sm:inline-flex px-4 py-2 text-xs font-semibold rounded-full bg-brand-500 text-white hover:bg-brand-600 transition-all shadow-lg shadow-brand-500/20">
+            Falar Comigo
+        </a>
+    </nav>
 
-        <header class="hero">
-            <div class="center">
-                <img src="./img/ever.jpg" alt="Foto de Everson Pereira" class="profile-img">
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-medium text-brand-400 border border-brand-500/30">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    ANALISTA DE SUPORTE DE TI E INFRAESTRUTURA
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Automação, Eficiência &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-400">Melhoria Contínua</span>
+                </h1>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                    Profissional com mais de 8 anos de experiência em suporte técnico, infraestrutura e gestão de parque computacional.
+                </p>
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#sobre" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-medium text-sm transition-all shadow-lg shadow-brand-500/25 flex items-center gap-2">
+                        Ver Trajetória Completa <i class="fa-solid font-xs fa-arrow-right"></i>
+                    </a>
+                    <a href="#contato" class="px-6 py-3 rounded-xl glass hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all flex items-center gap-2">
+                        Entrar em Contato
+                    </a>
+                </div>
             </div>
 
-            <h1>Everson Pereira</h1>
-            <h2>Infraestrutura • DevOps • Automação • Tecnologia</h2>
+            <!-- Terminal DevOps / Infra Card -->
+            <div class="lg:col-span-5">
+                <div class="rounded-2xl glass border border-slate-700/50 shadow-2xl overflow-hidden font-mono text-sm">
+                    <!-- Barra superior do Terminal -->
+                    <div class="bg-slate-900/80 px-4 py-3 flex items-center gap-2 border-b border-slate-800">
+                        <div class="w-3 h-3 rounded-full bg-rose-500 hover:bg-rose-600 transition-colors cursor-pointer"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors cursor-pointer"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition-colors cursor-pointer"></div>
+                        <span class="text-xs text-slate-500 ml-2">root@everson-infra:~#</span>
+                    </div>
+                    <!-- Corpo do Terminal -->
+                    <div class="p-6 text-slate-300 space-y-2 leading-relaxed">
+                        <p><span class="text-emerald-400">root@everson:~$</span> ./deploy_ambiente.sh --prod</p>
+                        <p><span class="text-brand-400">[ INFO ]</span> Iniciando automação de infraestrutura...</p>
+                        <p><span class="text-emerald-400">[  OK  ]</span> Cluster Proxmox VE autenticado.</p>
+                        <p><span class="text-emerald-400">[  OK  ]</span> Containers LXC e volumes provisionados.</p>
+                        <p><span class="text-emerald-400">[  OK  ]</span> Deploy da imagem via MDT/FOG concluído.</p>
+                        <p><span class="text-emerald-400">[  OK  ]</span> Sincronização Active Directory e OCS Inventory.</p>
+                        <p><span class="text-brand-400">[ INFO ]</span> Verificando integridade de rotinas...</p>
+                        <p><span class="text-emerald-400">[  OK  ]</span> Jobs do Veeam Backup validados com sucesso.</p>
+                        <p class="mt-4 flex items-center gap-2">
+                            <span class="text-brand-400">Status do Sistema:</span> 
+                            <span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-xs font-bold tracking-wider border border-emerald-500/30">100% HEALTHY</span>
+                        </p>
+                        <p class="text-emerald-400 animate-pulse mt-1">_</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <p class="intro">
-                Profissional apaixonado por tecnologia, com foco em infraestrutura, redes, automação, homelab
-                e soluções práticas para o dia a dia.
+    <!-- EXPERTISE SECTION -->
+    <section id="expertise" class="py-20 relative border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider">Competências</span>
+                <h2 class="text-3xl font-bold text-white mt-2">Principais Especialidades</h2>
+                <p class="text-slate-400 text-sm mt-2">Domínio em suporte N1/N2/N3, infraestrutura de redes e automação de imagens.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-6 rounded-2xl glass hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Sistemas &amp; Serviços</h3>
+                    <p class="text-slate-400 text-sm mb-6">Administração de servidores, gestão de utilizadores e acessos.</p>
+                    <div class="space-y-4 font-mono text-xs">
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>Windows Server / Active Directory</span><span>95%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[95%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>Office 365 / Licenciamento</span><span>92%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[92%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>DNS / GPO / Permissões</span><span>90%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-brand-500 w-[90%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 rounded-2xl glass hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Automação &amp; Deploy</h3>
+                    <p class="text-slate-400 text-sm mb-6">Padronização de imagens corporativas e automação de instalações.</p>
+                    <div class="space-y-4 font-mono text-xs">
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>MDT (Microsoft Deployment Toolkit)</span><span>95%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[95%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>FOG Project</span><span>90%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[90%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>Scripts de Automação / Deploy</span><span>88%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[88%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 rounded-2xl glass hover:border-brand-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Virtualização &amp; Redes</h3>
+                    <p class="text-slate-400 text-sm mb-6">Ambientes virtualizados, gestão de ativos de rede e segurança.</p>
+                    <div class="space-y-4 font-mono text-xs">
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>Proxmox / VMware</span><span>90%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-purple-400 w-[90%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>Zabbix / SolarWinds Monitoramento</span><span>92%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-purple-400 w-[92%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-slate-300"><span>Redes &amp; Firewalls (Fortigate / UniFi)</span><span>85%</span></div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-purple-400 w-[85%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="py-20 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider">Ecossistema</span>
+                <h2 class="text-3xl font-bold text-white mt-2">Stack DevOps &amp; Infraestrutura</h2>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-brands fa-windows text-blue-400"></i> Windows Server</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-brands fa-microsoft text-sky-400"></i> Active Directory / GPO</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-cloud text-blue-300"></i> Office 365</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-server text-orange-400"></i> Proxmox / VMware</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-compact-disc text-purple-400"></i> MDT &amp; FOG Project</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-chart-line text-red-400"></i> Zabbix</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-sun text-amber-400"></i> SolarWinds</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-500"></i> Veeam Backup</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-lock text-rose-400"></i> Trend Micro</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-network-wired text-sky-500"></i> Fortigate &amp; UniFi</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-boxes-stacked text-teal-400"></i> OCS Inventory</span>
+                <span class="px-4 py-2 rounded-xl glass text-sm text-slate-300 border border-slate-700/50 flex items-center gap-2"><i class="fa-solid fa-headset text-indigo-400"></i> Zendesk / Jira</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM, TRAJETÓRIA & FORMAÇÃO -->
+    <section id="sobre" class="py-20 border-t border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <!-- Resumo -->
+            <div class="max-w-3xl mb-16 space-y-4">
+                <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider">Resumo</span>
+                <h2 class="text-3xl font-bold text-white">Sobre Mim</h2>
+                <p class="text-slate-300 leading-relaxed">
+                    Profissional de Tecnologia da Informação com mais de 8 anos de experiência sólida em suporte técnico, infraestrutura de TI e automação de ambientes. Graduado em <strong>Gestão da Tecnologia da Informação</strong> com foco em eficiência, padronização e melhoria contínua.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+                    <div class="p-4 rounded-xl glass border border-slate-800">
+                        <span class="text-2xl font-extrabold text-brand-400">+8 Anos</span>
+                        <p class="text-xs text-slate-400 mt-1">Experiência em TI</p>
+                    </div>
+                    <div class="p-4 rounded-xl glass border border-slate-800">
+                        <span class="text-2xl font-extrabold text-emerald-400">1.600+</span>
+                        <p class="text-xs text-slate-400 mt-1">Máquinas Gerenciadas</p>
+                    </div>
+                    <div class="p-4 rounded-xl glass border border-slate-800">
+                        <span class="text-2xl font-extrabold text-purple-400">N1 / N2 / N3</span>
+                        <p class="text-xs text-slate-400 mt-1">Nível de Atendimento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Timeline de Experiência -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-brand-400"></i> Experiência Profissional
+                    </h3>
+
+                    <div class="relative border-l border-slate-800 pl-6 space-y-8 ml-2">
+                        
+                        <!-- GEL -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-brand-500 ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-brand-400">jun/2025 - Presente</span>
+                            <h4 class="text-base font-bold text-white mt-1">Analista de TI</h4>
+                            <p class="text-xs text-slate-400">GEL - Goetze Lobato Engenharia S.A. • Curitiba, PR</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Atendimento de chamados via Zendesk, Teams e acesso remoto (ISL, Teamviewer).</li>
+                                <li>Gestão de utilizadores e licenças no Active Directory, Office 365 e AutoCAD.</li>
+                                <li>Implantação do MDT para padronização de imagens, aplicações e drivers.</li>
+                                <li>Criação de scripts para automações e liberação de dispositivos em rede (Fortigate, UniFi).</li>
+                                <li>Gestão do parque de máquinas, inventário, backups (OneDrive, PSTs) e GPO/DNS.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Contabilizei -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 transition-colors ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-500">mai/2022 - abr/2025 (3 anos)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Analista de Suporte PL</h4>
+                            <p class="text-xs text-slate-400">Contabilizei • Curitiba, PR</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Responsável por um parque de cerca de 1.600 máquinas espalhadas pelo Brasil.</li>
+                                <li>Implantação do MDT e servidor FOG Project para deploy automatizado.</li>
+                                <li>Monitorização de links e servidores via Zabbix e gestão de inventário.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Sumitomo Rubber -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 transition-colors ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-500">jan/2022 - mai/2022 (5 meses)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Analista de TI</h4>
+                            <p class="text-xs text-slate-400">Sumitomo Rubber do Brasil • Fazenda Rio Grande</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Atendimento de chamados na plataforma Jira e aplicação de imagens padrão.</li>
+                                <li>Monitorização de ativos através do SolarWinds e orçamentos para projetos.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Dbm Contact Center -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 transition-colors ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-500">abr/2018 - jan/2022 (3 anos 10 meses)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Analista de Suporte PL</h4>
+                            <p class="text-xs text-slate-400">Dbm Contact Center • Curitiba, PR</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Gestão do antivírus Trend Micro, criação/atualização de GPOs e contas no AD.</li>
+                                <li>Implantação do OCS Inventory e documentação de procedimentos internos.</li>
+                                <li>Configuração de ramais em plataformas PABX e contas de e-mail (IceWarp, Zimbra).</li>
+                            </ul>
+                        </div>
+
+                        <!-- TLSV -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 transition-colors ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-500">mai/2016 - fev/2018 (1 ano 10 meses)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Assistente Administrativo</h4>
+                            <p class="text-xs text-slate-400">TLSV - Serviços em Telecomunicações • Curitiba, PR</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Configuração de tablets e telemóveis para supervisores e técnicos de campo.</li>
+                                <li>Gestão de permissões de acesso em dispositivos corporativos.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Anaconda -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 transition-colors ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-500">mai/2015 - mar/2016 (11 meses)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Analista de TI</h4>
+                            <p class="text-xs text-slate-400">Anaconda Industrial e Agrícola de Cereais S/A • Curitiba, PR</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Criação de imagens padronizadas de desktops e notebooks.</li>
+                                <li>Suporte a equipamentos de videoconferência Polycom e backups de servidores.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Third IT Solutions -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-brand-500 transition-colors ring-4 ring-slate-900"></div>
+                            <span class="text-xs font-mono text-slate-500">abr/2013 - set/2014 (1 ano 6 meses)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Analista de Suporte</h4>
+                            <p class="text-xs text-slate-400">Third IT Solutions (Alocado na GVT) • Curitiba, PR</p>
+                            <ul class="text-xs text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Atendimento de chamados VIP (Gerentes e Diretoria).</li>
+                                <li>Formatação e baixa de imagem via SCCM, e configuração de telefonia IP (Avaya/AudioCodes).</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Formação & Certificações -->
+                <div class="lg:col-span-5 space-y-8">
+                    
+                    <!-- Formação Acadêmica -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-brand-400"></i> Formação Acadêmica
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl glass border border-slate-800">
+                                <span class="text-xs font-mono text-brand-400">jul/2024 - abr/2025</span>
+                                <h4 class="text-sm font-bold text-white mt-1">Cloud Computing com IA</h4>
+                                <p class="text-xs text-slate-400">XP Educação</p>
+                            </div>
+                            <div class="p-4 rounded-xl glass border border-slate-800">
+                                <span class="text-xs font-mono text-brand-400">jun/2019 - fev/2021</span>
+                                <h4 class="text-sm font-bold text-white mt-1">Gestão em Tecnologia da Informação</h4>
+                                <p class="text-xs text-slate-400">UniCesumar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificações -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-certificate text-emerald-400"></i> Certificações
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="p-3 rounded-lg glass border border-slate-800 flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs text-slate-200">Virtualização com Proxmox VE 9</span>
+                            </div>
+                            <div class="p-3 rounded-lg glass border border-slate-800 flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs text-slate-200">Veeam na Prática: Backup, Restauração, Migração e Cloud</span>
+                            </div>
+                            <div class="p-3 rounded-lg glass border border-slate-800 flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs text-slate-200">Certificação Linux LPI Essentials parte 2</span>
+                            </div>
+                            <div class="p-3 rounded-lg glass border border-slate-800 flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 text-sm"></i>
+                                <span class="text-xs text-slate-200">Negociação e Influência</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-20 border-t border-slate-800/50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-brand-400 text-xs font-semibold uppercase tracking-wider">Contato</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Vamos Conversar?</h2>
+            <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">
+                Estou aberto a novas conexões, parcerias e oportunidades no mercado.
             </p>
 
-            <div class="hero-buttons">
-                <a href="https://github.com/everfp" target="_blank" rel="noopener noreferrer" class="btn primary">
-                    Ver GitHub
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+                <!-- Email -->
+                <a href="mailto:everson@eversonfp.com.br" class="p-6 rounded-2xl glass hover:border-brand-500/50 transition-all text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 mx-auto flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">E-mail</span>
+                    <p class="text-sm font-medium text-white mt-1">everson@eversonfp.com.br</p>
                 </a>
-                <a href="https://www.linkedin.com/in/eversonfp/" target="_blank" rel="noopener noreferrer" class="btn secondary">
-                    LinkedIn
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5541992154746" target="_blank" class="p-6 rounded-2xl glass hover:border-emerald-500/50 transition-all text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 mx-auto flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">WhatsApp</span>
+                    <p class="text-sm font-medium text-white mt-1">(41) 99215-4746</p>
                 </a>
-                <a href="mailto:everson@eversonfp.com.br" class="btn secondary">
-                    E-mail
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/eversonfp" target="_blank" class="p-6 rounded-2xl glass hover:border-sky-500/50 transition-all text-center group">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 mx-auto flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">LinkedIn</span>
+                    <p class="text-sm font-medium text-white mt-1">/in/eversonfp</p>
                 </a>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <main>
-            <section class="card">
-                <h3>Sobre mim</h3>
-                <p>
-                    Atuo com interesse em infraestrutura, redes, virtualização, automação e ferramentas modernas de TI.
-                    Gosto de criar ambientes de laboratório, testar novas tecnologias e desenvolver soluções úteis tanto
-                    para estudo quanto para aplicação prática.
-                </p>
-            </section>
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Everson Pereira. eversonfp.com.br - Curitiba, PR</p>
+    </footer>
 
-            <section class="card">
-                <h3>Projetos</h3>
-                <div class="projects">
-                    <div class="project-item">
-                        <h4>Homelab</h4>
-                        <p>
-                            Ambiente pessoal para testes de redes, virtualização, containers, automação,
-                            monitoramento e serviços internos.
-                        </p>
-                    </div>
-
-                    <div class="project-item">
-                        <h4>Automações</h4>
-                        <p>
-                            Scripts e soluções para facilitar rotinas, organização, gerenciamento e tarefas
-                            do dia a dia em tecnologia.
-                        </p>
-                    </div>
-
-                    <div class="project-item">
-                        <h4>Estudos em DevOps</h4>
-                        <p>
-                            Aprendizado contínuo em containers, integração, deploy, infraestrutura e boas práticas
-                            para ambientes modernos.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card">
-                <h3>Contato</h3>
-                <p>
-                    Estou disponível para networking, oportunidades profissionais, parcerias e troca de experiências na área de tecnologia.
-                </p>
-
-                <div class="contact-list">
-                    <p><strong>Telefone:</strong> <a href="tel:+5541992154746">(41) 99215-4746</a></p>
-                    <p><strong>E-mail:</strong> <a href="mailto:everson@eversonfp.com.br">everson@eversonfp.com.br</a></p>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <a href="https://www.instagram.com/eversonfp" target="_blank" rel="noopener noreferrer">
-                <img src="./img/instagram.svg" alt="Instagram">
-                <span>Instagram</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/eversonfp/" target="_blank" rel="noopener noreferrer">
-                <img src="./img/linkedin.svg" alt="LinkedIn">
-                <span>LinkedIn</span>
-            </a>
-
-            <a href="https://github.com/everfp" target="_blank" rel="noopener noreferrer">
-                <img src="./img/github.svg" alt="GitHub">
-                <span>GitHub</span>
-            </a>
-
-            <a href="https://www.youtube.com/@Eversonfp" target="_blank" rel="noopener noreferrer">
-                <img src="./img/youtube.svg" alt="YouTube">
-                <span>YouTube</span>
-            </a>
-
-            <a href="https://open.spotify.com/user/everson.fp" target="_blank" rel="noopener noreferrer">
-                <img src="./img/spotify-2.svg" alt="Spotify">
-                <span>Spotify</span>
-            </a>
-
-            <a href="https://www.tiktok.com/@eversonfp?_t=ZM-8rvGJXhrs75&_r=1" target="_blank" rel="noopener noreferrer">
-                <img src="./img/tiktok.svg" alt="TikTok">
-                <span>TikTok</span>
-            </a>
-        </footer>
-
-    </div>
 </body>
-
 </html>
